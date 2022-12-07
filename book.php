@@ -58,14 +58,9 @@
                 <a class="nav-link" href="index.php">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.php">Menu</a>
+                <a class="nav-link" href="recepten.php">Menu</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.php">About</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="book.php">Book Table <span class="sr-only">(current)</span> </a>
-              </li>
+             
             </ul>
             <div class="user_option">
               <a href="" class="user_link">
