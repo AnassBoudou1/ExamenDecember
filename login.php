@@ -47,7 +47,7 @@ color:white !important;
 				<a href="user-registration.php" style="color:white;">Sign up</a>
 			</div>
 			<div class="login-signup">
-				<a href=" indexCWM.php" style="color:white;">Homepage</a>
+				<a href= "index.php"; style="color:white;">Homepage</a>
 			</div>
 			<div class="signup-align">
 				<form name="login" action="" method="post"

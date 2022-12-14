@@ -1,3 +1,20 @@
+body{
+	background-image:url("./assets/bg1.jpg");
+	background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+}
+.sign-up-container{
+background-image: linear-gradient(to right, #ff0030 , #790975);
+}
+.form-label{
+color:white !important;
+}
+#login-btn{
+color:white;
+font-weight:bold;
+background: #343a40;
+}
 .sign-up-container {
 	border: 1px solid;
 	border-color: #9a9a9a;
