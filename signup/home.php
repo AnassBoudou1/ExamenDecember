@@ -10,8 +10,7 @@ if (isset($_SESSION["username"])) {
     session_unset();
     session_write_close();
     $url = "./index.php";
-    header("Location: $url");
-}
+    header("Location: $url");}
 
 ?>
 <HTML>
@@ -31,6 +30,7 @@ if (isset($_SESSION["username"])) {
   background-size: cover; /* Resize the background image to cover the entire container */
     }
 </style>
+
 </HEAD>
 <BODY>
     <!-- <img src="./assets/bg.jpg" alt=""> -->

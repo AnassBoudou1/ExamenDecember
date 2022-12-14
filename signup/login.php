@@ -6,6 +6,9 @@ if (! empty($_POST["login-btn"])) {
     $member = new Member();
     $loginResult = $member->loginMember();
 }
+
+
+
 ?>
 <HTML>
 <HEAD>
@@ -15,6 +18,7 @@ if (! empty($_POST["login-btn"])) {
 <link href="assets/css/user-registration.css" type="text/css"
 	rel="stylesheet" />
 <script src="vendor/jquery/jquery-3.3.1.js" type="text/javascript"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <style>
 	body{
@@ -41,6 +45,9 @@ color:white !important;
 		<div class="sign-up-container">
 			<div class="login-signup">
 				<a href="user-registration.php" style="color:white;">Sign up</a>
+			</div>
+			<div class="login-signup">
+				<a href=" indexCWM.php" style="color:white;">Homepage</a>
 			</div>
 			<div class="signup-align">
 				<form name="login" action="" method="post"
@@ -71,6 +78,7 @@ color:white !important;
 						<input class="btn btn-dark" type="submit" name="login-btn"
 							id="login-btn" value="Login Now">
 					</div>
+					
 				</form>
 			</div>
 		</div>
