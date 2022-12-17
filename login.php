@@ -1,4 +1,7 @@
 <?php
+
+
+
 use Phppot\Member;
 
 if (! empty($_POST["login-btn"])) {
@@ -7,9 +10,9 @@ if (! empty($_POST["login-btn"])) {
     $loginResult = $member->loginMember();
 }
 
-
-
+	
 ?>
+
 <HTML>
 <HEAD>
 <TITLE>Login</TITLE>
@@ -18,8 +21,8 @@ if (! empty($_POST["login-btn"])) {
 <link href="assets/css/user-registration.css" type="text/css"
 	rel="stylesheet" />
 <script src="vendor/jquery/jquery-3.3.1.js" type="text/javascript"></script>
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <style>
 	body{
         background-image:url("./assets/bg1.jpg");
@@ -39,7 +42,9 @@ color:white !important;
 	background: #343a40;
 }
 </style>
+
 </HEAD>
+
 <BODY>
 	<div class="phppot-container">
 		<div class="sign-up-container">

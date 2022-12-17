@@ -1,6 +1,10 @@
 <?php
 session_start();
 if (isset($_SESSION["username"])) {
+    $returnString = 
+            '<li class="nav-item active">
+                <a class="nav-link" href="bewerken.php">Bewerken <span class="sr-only">(current)</span> </a>
+              </li>';
     $username = $_SESSION["username"];
     session_write_close();
 } else {
