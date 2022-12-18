@@ -1,11 +1,37 @@
-<?php 
-include("function.php");
-include ("Model/Member.php")?>
+<?php include('function.php');
+
+session_start();
+if (isset($_SESSION["username"])) {
+            
+    $username = $_SESSION["username"];
+    session_write_close();
+}
+
+else {
+    // since the username is not set in session, the user is not-logged-in
+    // he is trying to access this page unauthorized
+    // so let's clear all session variables and redirect him to index
+    session_unset();
+    session_write_close();
+    $message = "Log in om toegang te krijgen tot deze pagina";
+    echo "<script>
+alert('$message');
+window.location.href='index.php';
+</script>";
+} 
+
+?>
 
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,16 +60,31 @@ include ("Model/Member.php")?>
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-</head>
 
-<body>
-
-  <div class="hero_area">
-    <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
-    </div>
-    <!-- header section strats -->
-    <header class="header_section">
+        <style>
+    body{
+      background-image: url("");
+      background-size: cover; 
+    }
+    .nummer{
+      background-color:lightgray;
+    }
+    .container_eigen{
+      background-color: white;
+    }
+    .smakelijk{
+      font-family:fantasy;
+    }
+    .blok_plaats{
+      margin:30px;
+    }
+    .foto{
+      margin:10px;
+    }
+  </style>
+    </head>
+    <body>
+  <header class="header_section" style="background: black;">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.php">
@@ -58,16 +99,15 @@ include ("Model/Member.php")?>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Home </a>
+              <li class="nav-item active">
+                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="recepten.php">Recepten <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="recepten.php">Recepten</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
               </li>
-              
             </ul>
             <div class="user_option">
               <a href="" class="user_link">
@@ -79,47 +119,48 @@ include ("Model/Member.php")?>
                  
                 </button>
               </form>
-              <a href="login.php" class="order_online">
-                LOG IN
-            </a>
+              <span class="login-signup btn btn-warning"><a href="logout.php" style="color:white">Logout</a></span>
+
             </div>
           </div>
         </nav>
       </div>
     </header>
-    <!-- end header section -->
-  </div>
 
-  <section class="food_section layout_padding-bottom">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Onze recepten
-        </h2>
-      </div>
 
-      <ul class="filters_menu">
-        <li class="active" data-filter="*">Alle</li>
-        
-      </ul>
 
-      <div class="filters-content">
-        <div class="row grid">
 
-        <?php echo make_cards($conn) ?>
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5 container_eigen">
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light"></h1>
+                    <table class="table ">
+                  <tr><br><br>
+                    <th>Ingrediënten</th>
+                    <th>Hoeveelheid</th>
+                  </tr>
+                </thead>
+                <tbody >
+                    <?php echo ingredienten_pizza($conn); ?>
+                    </tbody>
+                </table>
+                </div>
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0 foto" src="images/f6.png" alt="..." /></div>
 
-      <div class="btn-box">
-        <a href="">
-          Bekijk meer
-        </a>
-      </div>
-    </div>
-  </section>
+            </div>
+            <div class="container_stappenplan">
+              <div class="stappenplan">
+                <div class='container_stappen'><strong>Bereidingstijd:</strong><span> 20 Minuten </span> - <strong> Aantal Personen:</strong><span> 3 Pers.</span></div><br>
+                <div class='container_stappen'><strong>Aan De Slag:</strong><span> <br>Meng in een kom de eieren, de bloem, melk en een snufje zout. Als alle klontjes zijn verdwenen, kunnen de pannenkoeken gebakken worden. Verwarm een beetje boter of margarine in een pan. Wacht even totdat de pan goed warm is, en verdeel dan met een soeplepel wat beslag in het midden van de pan. Beweeg je pan een beetje heen en weer zodat het beslag over de hele pan verdeeld is. Bak de pannenkoek ongeveer 2-3 minuten totdat de bovenkant droog is. Draai de pannenkoek om en bak de pannenkoek nog ongeveer 1-2 minuten op de andere kant. Leg de pannenkoek op een bord en dek het bord af met een grote deksel. Bak zo de rest van de pannenkoeken. Vergeet niet om iedere keer een beetje extra boter of margarine in de pan te doen, voordat je een nieuwe pannenkoek bakt.</div> <br>
 
-  <!-- end food section -->
 
-  <!-- footer section -->
-  <footer class="footer_section">
+ </span></div>
+</div>
+</div>
+
+<!-- footer section -->
+<footer class="footer_section">
     <div class="container">
       <div class="row">
         <div class="col-md-4 footer-col">
@@ -152,7 +193,7 @@ include ("Model/Member.php")?>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-            Cook With Me
+              Feane
             </a>
             <p>
               Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
@@ -200,27 +241,8 @@ include ("Model/Member.php")?>
   </footer>
   <!-- footer section -->
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- isotope js -->
-  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
 
-</body>
 
-</html>
+
+              
+   

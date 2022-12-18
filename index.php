@@ -1,5 +1,5 @@
 <?php 
-include("card.php");
+include("function.php");
 include ("Model/Member.php")?>
 
 <!DOCTYPE html>
@@ -67,6 +67,7 @@ include ("Model/Member.php")?>
               <li class="nav-item">
                 <a class="nav-link" href="about.php">About</a>
               </li>
+              
             </ul>
             <div class="user_option">
               <a href="" class="user_link">
