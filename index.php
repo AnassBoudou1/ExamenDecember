@@ -192,7 +192,8 @@ include ("Model/Member.php")?>
 
         <?php echo make_cards($conn) ?>
 
-      <div class="btn-box">
+</div>
+<div class="btn-box">
         <a href="">
           Bekijk meer
         </a>

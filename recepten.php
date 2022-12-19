@@ -88,6 +88,82 @@ include ("Model/Member.php")?>
       </div>
     </header>
     <!-- end header section -->
+
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>
+                    Wat eten we tijdens het najaar?
+                    </h1>
+                    <p>
+                    Geniet van al het moois én lekkers van het najaar. Wat is er gezelliger dan samen binnen genieten van een warme stamppot of zelfgemaakte soep? Bij Jumbo vind je alles voor de lekkerste najaarsrecepten en dat alles natuurlijk voor de laagste prijs.                     </p>
+                    <div class="btn-box">
+                    <a href="recepten.php" class="btn1">
+                        Recepten
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>
+                        Smakelijk eten!
+                    </h1>
+                    <p>
+                    Cook With Me is een online kookboek van o.a. makkelijke, snelle en gezonde recepten. We streven er naar in de toekomst een breed kookplatform te zijn met informatie over gezonde voeding, kook tips, restaurants, keukenapperatuur aanbiedingen en meer. Kortom alles op culinair gebied!                    </p>
+                    <div class="btn-box">
+                      <a href="recepten.php" class="btn1">
+                        Recepten
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 col-lg-6 ">
+                  <div class="detail-box">
+                    <h1>
+                    Snel en smakelijk!
+                    </h1>
+                    <p>
+                    35 recepten, klaar in minder dan 20 minuten                    </p>
+                    <div class="btn-box">
+                    <a href="recepten.php" class="btn1">
+                        Recepten
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+      </div>
+
+    </section>
+
   </div>
 
   <section class="food_section layout_padding-bottom">
@@ -108,12 +184,13 @@ include ("Model/Member.php")?>
 
         <?php echo make_cards($conn) ?>
 
-      <div class="btn-box">
+        
+    </div>
+    <div class="btn-box">
         <a href="">
           Bekijk meer
         </a>
       </div>
-    </div>
   </section>
 
   <!-- end food section -->
